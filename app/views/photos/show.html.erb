@@ -1,12 +1,32 @@
   <div class="row">
-    <div class="span6">
+    <div class="span8">
     <%= render 'pix' %>
 	</div>
+
+
     <div class="span4">
-      <h2>Sponsored Links</h2>
-      <p>
-      	<a href="http://fanfusion.org/links/banner300x250.html" target="_blank"><img src = "http://fanfusion.org/links/banner300x250.png"></a>
-		</p>        
+      <h2>Thumbnail</h2>
+
+
+<% thumbimage = "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb2}" %>
+<%= link_to image_tag(@photo.file.thumb, class: "img-polaroid", alt: "@photo.file"), thumbimage %>
+
+
+
+<p>Website Embed Code:</p>
+<textarea rows="4" class="input-xlarge" onclick="this.select();">
+<a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" target="_blank"><img src="<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>" alt="image host"/></a>
+</textarea>
+
+
+<p>BB-Code</p>
+<textarea rows="4" class="input-xlarge" onclick="this.select();">
+[URL=<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>][IMG]<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>[/IMG][/URL] 
+</textarea>
+
+
+
+     
     </div>
   </div>
 

@@ -1,32 +1,17 @@
   <% fullsizeimage = "#{request.protocol}#{request.host_with_port}#{@photo.file}" %>
 <%= link_to image_tag(@photo.file.medium, class: "img-polaroid", alt: "@photo.file"), fullsizeimage %>
-<p>File: <%= @photo.file.name %></p>
+
 
 <p>Photo page:</p>
-<textarea rows="1" class="input-xlarge" onclick="this.select();"> <%= "#{request.protocol}#{request.host_with_port}#{"/"}#{@photo.id}" %></textarea>
+<textarea rows="1" class="input-xlarge" onclick="this.select();"><%= "#{request.protocol}#{request.host_with_port}#{"/"}#{@photo.id}" %></textarea>
 
 <p>Direct image link:</p>
-<textarea rows="1" class="input-xlarge" onclick="this.select();"><%= "#{request.protocol}#{request.host_with_port}#{@photo.file}" %></textarea>
+<textarea rows="2" class="input-xlarge" onclick="this.select();"><%= "#{request.protocol}#{request.host_with_port}#{@photo.file}" %></textarea>
 
 
+<p><span>File: <%= @photo.file.name %></span><br>
+<% @date = @photo.created_at %>
+Uploaded: <%= @date.strftime("%B #{@date.day.ordinalize}, %Y") %></p>
 
-
-<p>Thumbnail:</p> 
-
-<% thumbimage = "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb2}" %>
-<%= link_to image_tag(@photo.file.thumb, class: "img-polaroid", alt: "@photo.file"), thumbimage %>
-
-
-
-<p>Copy Thumbnail Code:</p>
-<textarea rows="4" class="input-xlarge" onclick="this.select();">
-<a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" target="_blank"><img src="<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>" alt="image host"/></a>
-</textarea>
-
-
-<p>BB-Code</p>
-<textarea rows="4" class="input-xlarge" onclick="this.select();">
-[URL=<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>][IMG]<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>[/IMG][/URL] 
-</textarea>
 
 
