@@ -1,0 +1,14 @@
+<%= form_for @photo, :html => {:multipart => true} do |f| %>  
+   <% @photo.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li><% end %> 
+
+    <%= f.file_field :file %>
+
+
+  </p>  
+  <p><%= f.submit nil, :class => 'btn'%></p>
+
+
+
+<% end %> 
+

@@ -1,0 +1,2 @@
+<% fullsizeimage = "#{request.protocol}#{request.host_with_port}#{@photo.file}" %>
+<%= link_to image_tag(@photo.file.medium, class: "img-polaroid", alt: "@photo.file"), fullsizeimage %>
