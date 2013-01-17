@@ -15,7 +15,7 @@ end
 
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
-gem 'mini_magick'
+#gem 'mini_magick'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,7 +30,7 @@ group :assets do
 end
 
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'mysql'
 end
 
 
