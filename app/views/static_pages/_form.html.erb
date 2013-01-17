@@ -2,7 +2,7 @@
    <% @photo.errors.full_messages.each do |msg| %>
     <li><%= msg %></li><% end %> 
 
-    <%= f.file_field :file %>
+    <%= f.file_field :file , :required => true %>
 
 
   </p>  
