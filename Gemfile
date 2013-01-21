@@ -30,7 +30,11 @@ group :assets do
 end
 
 group :production do
-  gem 'mysql' , '~> 2.9.0'
+  gem 'mysql'
+
+    gem 'execjs'
+    gem 'therubyracer'
+    gem 'libv8', '3.11.8.13'
 end
 
 
