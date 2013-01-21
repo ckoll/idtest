@@ -118,9 +118,8 @@ DEPENDENCIES
   bootstrap-sass (= 2.1)
   carrierwave
   coffee-rails (~> 3.2.1)
-  execjs
   jquery-rails
-  mysql
+  mysql (~> 2.9.0)
   rack (~> 1.4.1)
   rails (= 3.2.9)
   rmagick
