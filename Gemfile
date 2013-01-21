@@ -30,7 +30,7 @@ group :assets do
 end
 
 group :production do
-  gem 'mysql'
+  gem 'mysql2'
 
     gem 'execjs'
     gem 'therubyracer'
