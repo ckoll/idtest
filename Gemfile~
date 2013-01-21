@@ -24,18 +24,13 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
 
 group :production do
   gem 'mysql' , '~> 2.9.0'
-
-  gem 'execjs'
-
-  gem 'therubyracer'
-
 end
 
 
