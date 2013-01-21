@@ -30,7 +30,7 @@ group :assets do
 end
 
 group :production do
-  gem 'mysql' , '~> 2.9.0'
+  gem 'mysql'
 end
 
 
