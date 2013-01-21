@@ -8,6 +8,11 @@
 <p>Direct image link:</p>
 <textarea rows="2" class="input-xlarge" onclick="this.select();"><%= "#{request.protocol}#{request.host_with_port}#{@photo.file}" %></textarea>
 
+<p>Website Embed Code (300 pixels):</p>
+<textarea rows="4" class="input-xlarge" onclick="this.select();">
+<a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" target="_blank"><img src="<%= "#{request.protocol}#{request.host_with_port}#{@photo.file}" %>" alt="imageduck.org image host" /></a>
+</textarea>
+
 
 <p><span>File: <%= @photo.file.name %></span><br>
 <% @date = @photo.created_at %>
