@@ -12,6 +12,7 @@ group :development, :test do
   gem 'sqlite3', '1.3.5'
 end
 
+gem 'rack', '1.4.4'
 
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'

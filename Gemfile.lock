@@ -115,6 +115,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   mysql
+  rack (= 1.4.4)
   rails (= 3.2.9)
   rmagick
   sass-rails (~> 3.2.3)
