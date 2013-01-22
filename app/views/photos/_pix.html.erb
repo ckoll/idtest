@@ -10,7 +10,7 @@
 
 <p>Website Embed Code (300 pixels):</p>
 <textarea rows="4" class="input-xlarge" onclick="this.select();">
-<a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" target="_blank"><img src="<%= "#{request.protocol}#{request.host_with_port}#{@photo.file}" %>" alt="imageduck.org image host" /></a> <p><a href="http://imageduck.org">Uploaded with imageduck.org image host</a></p>
+<a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" target="_blank"><img src="<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.medium}" %>" alt="imageduck.org image host" /></a> <p><a href="http://imageduck.org">Uploaded with imageduck.org image host</a></p>
 </textarea>
 
 
