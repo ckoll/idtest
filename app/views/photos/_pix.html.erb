@@ -11,7 +11,7 @@
 </textarea>
 
 <p>Photo page:</p>
-<textarea rows="1" class="input-xlarge" onclick="this.select();"><%= "#{request.protocol}#{request.host_with_port}#{"/photos/"}#{@photo.id}" %></textarea>
+<textarea rows="1" class="input-xlarge" onclick="this.select();"><%= "#{request.protocol}#{request.host_with_port}#{"/"}#{@photo.id}" %></textarea>
 
 
 <p><span>File: <%= @photo.file.name %></span><br>
