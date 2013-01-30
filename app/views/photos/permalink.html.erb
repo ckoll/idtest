@@ -1,4 +1,6 @@
 <% fullsizeimage = "#{request.protocol}#{request.host_with_port}#{@photo.file}" %>
+<center>
+
 <%= link_to image_tag(@photo.file, class: "img-polaroid", alt: "@photo.file"), fullsizeimage %>
 
 <p>Photo page:</p>
@@ -6,3 +8,5 @@
 
 <p>Direct image link:</p>
 <textarea rows="2" class="input-xlarge" onclick="this.select();"><%= "#{request.protocol}#{request.host_with_port}#{@photo.file}" %></textarea>
+
+</center>

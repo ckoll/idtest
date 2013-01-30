@@ -27,6 +27,7 @@ class PhotosController < ApplicationController
 
 	def permalink
 		@photo=Photo.find(params[:urlid])
+		render :layout => false
 	end
 
 
