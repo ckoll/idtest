@@ -20,7 +20,35 @@ embed the thumbnail in a website or forum. This website was made for fun
     
 	<div id="content">
     
-    <%= render 'form' %>
+
+
+    <%= render 'pix' %>
+
+
+
+      <h2>Thumbnail</h2>
+
+
+<% thumbimage = "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb2}" %>
+<%= link_to image_tag(@photo.file.thumb, class: "img-polaroid", alt: "@photo.file"), thumbimage %>
+
+
+
+<p>Website Embed Code:</p>
+<textarea rows="4" class="input-xlarge" onclick="this.select();">
+<a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" target="_blank"><img src="<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>" alt="image host"/></a> <p><a href="http://imageduck.org">Uploaded with imageduck.org image host</a></p>
+</textarea>
+
+
+<p>BB-Code</p>
+<textarea rows="4" class="input-xlarge" onclick="this.select();">
+[URL=<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>][IMG]<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>[/IMG][/URL] 
+</textarea>
+
+
+
+
+
 
 
 

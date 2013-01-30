@@ -25,6 +25,4 @@ production:
   pool: 20
   username: imageduc_duck
   password: duckduck
-#  socket: /tmp/mysql.sock
-  timeout: 9000
-  reconnect: true
+  socket: /tmp/mysql.sock

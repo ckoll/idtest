@@ -1,33 +1,58 @@
-  <div class="row">
-    <div class="span6">
-    <%= render 'pix' %>
+	<!--NAV-->
+	<div id="nav">    
+	    <div id="nav-links">
+    		<div class="contact"><a href="mailto:admin@imageduck.org">contact us</a></div>
+    	</div>  
 	</div>
+	<!--END OF NAV-->
 
 
-    <div class="span4">
-      <h2>Thumbnail</h2>
+<div id="wrap">
+
+	<div id="welcome">
+    	ImageDuck.Org is a simple image host. Simply select the image from 
+your computer and upload it. Copy and paste the url to show someone, or 
+embed the thumbnail in a website or forum. This website was made for fun
+ as an experiment in one day. If you find any errors, please let me know
+ at:<p>
+        <orange>admin@imageduck.org</orange>
+    </p></div>
+    
+	<div id="content">
+    
+<!-- START CONTENT -->
 
 
-<% thumbimage = "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb2}" %>
-<%= link_to image_tag(@photo.file.thumb, class: "img-polaroid", alt: "@photo.file"), thumbimage %>
+<div>
+    <%= render 'pix' %>
+</div>
+
+<div>
+    <%= render 'thumbnail' %>
+</div>
+
+
+<!-- END CONTENT -->
 
 
 
-<p>Website Embed Code:</p>
-<textarea rows="4" class="input-xlarge" onclick="this.select();">
-<a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" target="_blank"><img src="<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>" alt="image host"/></a> <p><a href="http://imageduck.org">Uploaded with imageduck.org image host</a></p>
-</textarea>
+
+	</div>
+    
+    <div class="footer"></div>
+</div>
 
 
-<p>BB-Code</p>
-<textarea rows="4" class="input-xlarge" onclick="this.select();">
-[URL=<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>][IMG]<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>[/IMG][/URL] 
-</textarea>
+<div id="clear"></div>
+<!--END OF CONTENT-->
 
 
 
-     
-    </div>
-  </div>
+
+<div id="footer">
+© 2013 ImageDuck.org <a href="mailto:admin[at]imageduck.org">admin[at]imageduck.org</a>. Designed by: <a href="amber.morais@gmail.com">amber</a>. All rights reserved.
+</div>
 
 
+
+<div title="Scroll Back to Top" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" id="topcontrol"><div style="margin: 0 55px 55px 0;">⇪ Scroll Up</div></div>
