@@ -1,45 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>ImageDuck.Org - Simple Image Host</title>
+<%= stylesheet_link_tag "style2" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
 	<!--NAV-->
 	<div id="nav">    
 	    <div id="nav-links">
-    		<div class="contact"><a href="mailto:admin@imageduck.org">contact us</a></div>
+        	<a href="http://imageduck.org">homepage</a>
+    		<div class="contact"><a href="mailto:admin[at]imageduck.org">contact us</a></div>
     	</div>  
 	</div>
 	<!--END OF NAV-->
 
 
 <div id="wrap">
-
-	<div id="welcome">
-    	ImageDuck.Org is a simple image host. Simply select the image from 
-your computer and upload it. Copy and paste the url to show someone, or 
-embed the thumbnail in a website or forum. This website was made for fun
- as an experiment in one day. If you find any errors, please let me know
- at:<p>
-        <orange>admin@imageduck.org</orange>
-    </p></div>
-    
+      
 	<div id="content">
     
-<!-- START CONTENT -->
+    <div id="columns">
+    <div class="col1">
+    	
+        <h2>Image Results</h2>
 
+<!-- start image results code -->
+        <% fullsizeimage = "#{request.protocol}#{request.host_with_port}#{@photo.file}" %>
+<%= link_to image_tag(@photo.file.medium, class: "img-polaroid", alt: "@photo.file"), fullsizeimage %>
 
-<div>
-    <%= render 'pix' %>
-</div>
+		<p>Direct image link:</p>
+<textarea rows="2" class="input-xlarge" onclick="this.select();"><%= "#{request.protocol}#{request.host_with_port}#{@photo.file}" %></textarea>
 
-<div>
-    <%= render 'thumbnail' %>
-</div>
+<p>Website Embed Code (300 pixels):</p>
+<textarea rows="4" class="input-xlarge" onclick="this.select();">
+<a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" target="_blank"><img src="<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.medium}" %>" alt="imageduck.org image host" /></a> <p><a href="http://imageduck.org">Uploaded with imageduck.org image host</a></p>
+</textarea>
 
+<p>Photo page:</p>
+<textarea rows="1" class="input-xlarge" onclick="this.select();"><%= "#{request.protocol}#{request.host_with_port}#{"/"}#{@photo.id}" %></textarea>
 
-<!-- END CONTENT -->
+<p><span>File: <%= @photo.file.name %></span><br>
+<% @date = @photo.created_at %>
+Uploaded: <%= @date.strftime("%B #{@date.day.ordinalize}, %Y") %></p>
 
-
-
+<!-- end image results code -->
 
 	</div>
     
-    <div class="footer"></div>
+    
+
+	<div class="col2">
+          <h2>Thumbnail</h2>
+
+<!-- start thumbnail code -->
+<% thumbimage = "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb2}" %>
+<%= link_to image_tag(@photo.file.thumb, class: "img-polaroid", alt: "@photo.file"), thumbimage %>
+
+<p>Website Embed Code:</p>
+<textarea rows="4" class="input-xlarge" onclick="this.select();">
+<a href="<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>" target="_blank"><img src="<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>" alt="image host"/></a> <p><a href="http://imageduck.org">Uploaded with imageduck.org image host</a></p>
+</textarea>
+
+<p>BB-Code</p>
+<textarea rows="4" class="input-xlarge" onclick="this.select();">
+[URL=<%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>][IMG]<%= "#{request.protocol}#{request.host_with_port}#{@photo.file.thumb}" %>[/IMG][/URL] 
+</textarea>
+
+<!-- end thumbnail code -->
+
+	</div>
+    </div>
+    
+
+<div id="clear"></div>
+
+
+
+
+ 	</div>
 </div>
 
 
@@ -56,3 +97,8 @@ embed the thumbnail in a website or forum. This website was made for fun
 
 
 <div title="Scroll Back to Top" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" id="topcontrol"><div style="margin: 0 55px 55px 0;">⇪ Scroll Up</div></div>
+
+
+
+</body>
+</html>

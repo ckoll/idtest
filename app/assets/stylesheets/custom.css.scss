@@ -2,6 +2,7 @@
 
 /* mixins, variables, etc. */
 
+/*
 $grayMediumLight: #eaeaea;
 
 
@@ -10,9 +11,11 @@ $grayMediumLight: #eaeaea;
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
+*/
 
 /* miscellaneous */
 
+/*
 .debug_dump {
   clear: both;
   float: left;
@@ -20,10 +23,11 @@ $grayMediumLight: #eaeaea;
   margin-top: 45px;
   @include box_sizing;
 }
-
+*/
 
 /* universal */
 
+/*
 html {
   overflow-y: scroll;
 }
@@ -47,8 +51,12 @@ textarea {
   }
 }
 
+
+*/
+
 /* typography */
 
+/*
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -73,4 +81,6 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
+*/
 

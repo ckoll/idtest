@@ -23,7 +23,7 @@ html, body {
 }
 
 body {
-	background:		#364090 url(BG.png) no-repeat;	
+	background:		#364090 url(BGsmall.png) no-repeat;	
 	background-position: top center;
 	font: 			normal 9pt/15pt Gill Sans;
 	color: 			#aabcff;
@@ -76,6 +76,7 @@ orange {
 }
 
 
+
 form {
 	border: none;
 
@@ -91,7 +92,6 @@ form input {
 	color: #FFFFFF;
 	outline: hidden;
 }
-
 
 
 /*------------------------------------------------------------------------*/
@@ -149,7 +149,7 @@ div#clear {
 #welcome {
 	width: 298px;
 	height: 152px;
-	margin: 125px 0 0 250px;
+	margin: 33px 0 0 254px;
 	text-align: center;
 	clear: both;
 	line-height: 16px;
@@ -157,14 +157,27 @@ div#clear {
 
 #content {
 	background:		#ffffff;
-	margin:			0px;
-	padding: 		40px;
+	margin:			100px 0 0 0;
+	padding: 		40px 0px;
 	color:			#5e5f63;
-	min-height:		82px;
 	font-size:		10pt;
 	-moz-border-radius: 40px;
 	-webkit-border-radius: 40px;
 	border-radius:	40px;
+}
+
+#columns {
+	width:		620px;
+	margin:		0px auto;
+	min-height:	350px;
+	padding: 	0 0 10px 0;
+	text-align:	center;
+}
+
+.col1, .col2 {
+	width:		300px;
+	float:		left;
+	margin: 	0 5px;
 }
 	
 #footer {

@@ -1,6 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>ImageDuck.Org - Simple Image Host</title>
+<%= stylesheet_link_tag  "style" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
 	<!--NAV-->
 	<div id="nav">    
 	    <div id="nav-links">
+        	<a href="http://imageduck.org">homepage</a>
     		<div class="contact"><a href="mailto:admin[at]imageduck.org">contact us</a></div>
     	</div>  
 	</div>
@@ -19,14 +30,15 @@ embed the thumbnail in a website or forum. This website was made for fun
     </p></div>
     
 	<div id="content">
-    
-    <%= render 'form' %>
+
+
+<%= render 'form' %>
+
 
 
 
 	</div>
-    
-    <div class="footer"></div>
+
 </div>
 
 
@@ -37,9 +49,13 @@ embed the thumbnail in a website or forum. This website was made for fun
 
 
 <div id="footer">
-© 2013 ImageDuck.org <a href="mailto:admin[at]imageduck.org">admin[at]imageduck.org</a>. Designed by: <a href="mailto:amber.morais@gmail.com">amber</a>. All rights reserved.
+© 2013 ImageDuck.org <a href="mailto:admin[at]imageduck.org">admin[at]imageduck.org</a>. Designed by: <a href="amber.morais[at]gmail.com">amber</a>. All rights reserved.
 </div>
 
 
 
 <div title="Scroll Back to Top" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" id="topcontrol"><div style="margin: 0 55px 55px 0;">⇪ Scroll Up</div></div>
+
+
+</body>
+</html>
