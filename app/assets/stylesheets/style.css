@@ -77,21 +77,23 @@ orange {
 
 
 form {
-	border: none;
-
+	/*border: none;*/
 }
 
 form input {
 	border: none;
-	background: url(button.png);
+	/*background: url(button.png);*/
 	padding: 5px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius:		10px;
-	color: #FFFFFF;
+	color: #606060;
 	outline: hidden;
 }
 
+form input:hover {
+    background: #eef;
+}
 
 
 /*------------------------------------------------------------------------*/
